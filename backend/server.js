@@ -1,17 +1,26 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
 
-import authroutes from './routes/authroutes.js'
+import authroutes from './routes/authroutes.js';
+import messageroutes from './routes/messageroutes.js';
+import userRoutes from './routes/userRoutes.js';
+
 import connectToMongoDB from './db/connectToMongoDB.js';
 
 const app = express();
+
 
 dotenv.config();
 const PORT = process.env.PORT ;
 const MONGO_DB_URI = process.env.MONGO_DB_URI;
 
 app.use(express.json());
-app.use('/api/auth',authroutes)
+app.use(cookieParser());
+
+app.use('/api/auth',authroutes);
+app.use('/api/messages',messageroutes);
+app.use('/api/users',userRoutes );
 
 app.get('/' , (req, res) => {
     res.send('Hello World!')
