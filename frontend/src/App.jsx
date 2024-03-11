@@ -1,8 +1,15 @@
 import React from 'react'
+import Login from './pages/login/Login'
+import Signup from './pages/signup/Signup'
 
 const App = () => {
   return (
-    <div className='bg-red-500 text-white '>App</div>
+   <>
+   <div className='p-4 h-screen flex item-center justify-center'>
+     {/* <Login />    */}
+     <Signup/>
+     </div>
+     </>
   )
 }
 
