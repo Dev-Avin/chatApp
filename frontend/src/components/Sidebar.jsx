@@ -9,7 +9,7 @@ const Sidebar = () => {
        <SearchInput/>
        <div className='divider bg-slate-300 opacity-10 rounded-full  px-3'/>
        <Contacts/>
-       <div className='divider rounded-full  px-3'/>
+       <div className='divider m-[14px] px-3'/>
        <LogOut/>
     </div>
   )
